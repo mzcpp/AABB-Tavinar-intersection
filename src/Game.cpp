@@ -336,6 +336,23 @@ bool Game::AABBTavianIntersection(SDL_Rect rect, Ray ray)
 	return tmax >= tmin;
 }
 
+//bool Game::AABBTavianIntersection(Cube cube, Ray ray)
+//{
+//	const float tx1 = (cube.x - ray.origin_.x) * ray.inverse_.x;
+//	const float tx2 = ((cube.x + cube.width_) - ray.origin_.x) * ray.inverse_.x;
+//
+//	const float ty1 = (cube.y - ray.origin_.y) * ray.inverse_.y;
+//	const float ty2 = ((cube.y + cube.height_) - ray.origin_.y) * ray.inverse_.y;
+//
+//	const float tz1 = (cube.z - ray.origin_.z) * ray.inverse_.z;
+//	const float tz2 = ((cube.z + cube.depth_) - ray.origin_.z) * ray.inverse_.z;
+//
+//	const float tmin = std::max(std::max(std::min(tx1, tx2), std::min(ty1, ty2)), std::min(tz1, tz2));
+//	const float tmax = std::min(std::min(std::max(tx1, tx2), std::max(ty1, ty2)), std::max(tz1, tz2));
+//
+//	return tmax >= tmin;
+//}
+
 void Game::Render()
 {
 	SDL_RenderSetViewport(renderer_, NULL);
